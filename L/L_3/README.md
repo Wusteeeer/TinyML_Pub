@@ -1,3 +1,4 @@
+```python
 def hex_to_c_array(hex_data, var_name):
 
   c_str = ''
@@ -33,9 +34,11 @@ def hex_to_c_array(hex_data, var_name):
   c_str += '\n ' + format(' '.join(hex_array)) + '\n};\n\n'
 
   # Close out header guard
-  c_str += 'const int ' + var_name + '_len = ' + str(len(hex_data)) + ';\n'
+  c_str += 'const int ' + var_name + '_len = ' + str(len(hex_data)) + ';\n
 
   return c_str
 
 with open('models/shape_quant_int8' + '.h', 'w') as file:
     file.write(hex_to_c_array(tflite_quant_model2, 'shape_quant_int8'))
+
+```
